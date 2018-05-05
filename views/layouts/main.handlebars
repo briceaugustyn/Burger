@@ -1,0 +1,11 @@
+<a>burger place</a>
+{{#each burgers}}
+  <p>Id: {{id}}</p>
+  <p>Burger name: ${{burgers}}</p>
+  <hr>
+{{/each}}
+<form action="/" method="POST">
+	<textarea type="text" name="burger"></textarea>
+
+	<button type="submit">Submit</button>
+</form>

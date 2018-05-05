@@ -2,6 +2,7 @@
 // =============================================================
 var express = require('express');
 var bodyParser = require('body-parser');
+var exphbs = require("express-handlebars");
 var path = require('path');
 
 // Sets up the Express App
@@ -14,6 +15,13 @@ var PORT = 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
+
+// Set Handlebars as the default templating engine.
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
+
+
 
 // Add the application routes
 //require(path.join(__dirname, './app/routing/apiRoutes'))(app);
