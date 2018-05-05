@@ -5,7 +5,7 @@ var express = require('express');
 const Orm = require("../models/burger.js")
 
 
-const Burger = require('model')
+const Burger = require('../config/orm.js')
 module.exports = {
     index: () => {
         Burger.all()

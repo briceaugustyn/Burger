@@ -1,7 +1,7 @@
 
 // Add the application routes
 
-require(path.join('./connectionjs'));
+require('./connection.js');
 
 //==================== ORM ============================
 
