@@ -1,17 +1,14 @@
-//====================Router ======================
-const BurgerController = require('../controllers/burgers_controller.js')
+// Dependencies
+// =============================================================
+const router = require("express").Router()
+const burgercontroler= require("../controllers/burgers_controller.js")
+// =============================================================
 
-module.exports = (router) => {
-    router.get('/:id', (req, res) => {
-        console.log("reach router")
-        res.render("index", { wishes: res })
-        // BurgerController.read(req.params.id)
-        //     .then((data) => {
-        //          res.render('index', data)
-        //      })
-    })
-   
-}
+router.get("/",(req,res,next)=>{
+    //res.send("yolo");
+burgercontroler.index()
+    .then(data=>res.render("index",{burgers:data}))
+    .catch (err=> console.log((err)))
+})
 
-//render only in here
-//=====================================================
+module.exports=router;
